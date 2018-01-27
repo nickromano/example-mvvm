@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD3DC478201D24A700C5ADB0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CD3DC477201D24A600C5ADB0 /* .swiftlint.yml */; };
+		CD3DC47A201D284700C5ADB0 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = CD3DC479201D284700C5ADB0 /* readme.md */; };
 		CD5E1634201C0CAE000A66DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1633201C0CAE000A66DD /* AppDelegate.swift */; };
 		CD5E1636201C0CAE000A66DD /* SimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1635201C0CAE000A66DD /* SimpleInputViewController.swift */; };
 		CD5E163B201C0CAE000A66DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5E163A201C0CAE000A66DD /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		CD3DC477201D24A600C5ADB0 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		CD3DC479201D284700C5ADB0 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		CD5E1630201C0CAE000A66DD /* ExampleMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5E1633201C0CAE000A66DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5E1635201C0CAE000A66DD /* SimpleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleInputViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		CD5E1627201C0CAE000A66DD = {
 			isa = PBXGroup;
 			children = (
+				CD3DC479201D284700C5ADB0 /* readme.md */,
 				CD3DC477201D24A600C5ADB0 /* .swiftlint.yml */,
 				CD5E1632201C0CAE000A66DD /* ExampleMVVM */,
 				CD5E1647201C0CAE000A66DD /* ExampleMVVMTests */,
@@ -242,6 +245,7 @@
 				CD5E163E201C0CAE000A66DD /* LaunchScreen.storyboard in Resources */,
 				CD5E165E201C4D1D000A66DD /* StartViewController.xib in Resources */,
 				CD5E163B201C0CAE000A66DD /* Assets.xcassets in Resources */,
+				CD3DC47A201D284700C5ADB0 /* readme.md in Resources */,
 				CD5E1658201C1880000A66DD /* SimpleInputViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
