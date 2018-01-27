@@ -35,7 +35,7 @@
                         <action selector="myButtonTapped:" destination="-1" eventType="touchUpInside" id="Zry-XF-b77"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-yO-Aih">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-yO-Aih">
                     <rect key="frame" x="20" y="162" width="335" height="86.5"/>
                     <string key="text">Enter some text into this field. It will be lower cased as you type and the button will only be enabled once the data is valid.
 (longer than 5 characters)</string>
