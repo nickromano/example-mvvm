@@ -10,6 +10,7 @@ The view models inputs are prefixed with `input`.  And the outputs all start wit
 
 Pros
 * KVO is a generally understood pattern
+* Can have multiple listeners for one output
 
 Cons
 * Need to make sure you remove observers to support iOS under 11
@@ -28,7 +29,7 @@ Pros
 * Can watch objects that are native to Swift
 
 Cons
-* Only one listener is supported for each property
+* Only one listener is supported for the state
 
 ### Bindable closure
 
