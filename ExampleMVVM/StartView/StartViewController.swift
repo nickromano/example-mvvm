@@ -10,36 +10,51 @@ import Foundation
 import UIKit
 
 enum TableViewRow {
-    case simpleInput
+    case simpleInputKVO
+    case simpleInputClosure
 
     var title: String {
         switch self {
-        case .simpleInput:
+        case .simpleInputKVO, .simpleInputClosure:
             return "Simple Input"
         }
     }
 
     var viewController: UIViewController {
         switch self {
-        case .simpleInput:
-            return SimpleInputViewController()
+        case .simpleInputKVO:
+            return KVOSimpleInputViewController()
+        case .simpleInputClosure:
+            return CSSimpleInputViewController()
         }
     }
 }
 
 enum TableViewSection {
-    case main
+    case kvo
+    case closureState
 
     var rows: [TableViewRow] {
         switch self {
-        case .main:
-            return [.simpleInput]
+        case .kvo:
+            return [.simpleInputKVO]
+        case .closureState:
+            return [.simpleInputClosure]
+        }
+    }
+
+    var titleForHeader: String {
+        switch self {
+        case .kvo:
+            return "KVO"
+        case .closureState:
+            return "Closure State"
         }
     }
 }
 
 class StartViewController: UITableViewController {
-    let sections: [TableViewSection] = [.main]
+    let sections: [TableViewSection] = [.kvo, .closureState]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,5 +88,9 @@ class StartViewController: UITableViewController {
 
         let row = sections[indexPath.section].rows[indexPath.row]
         navigationController?.pushViewController(row.viewController, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].titleForHeader
     }
 }

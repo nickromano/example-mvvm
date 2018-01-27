@@ -8,16 +8,16 @@
 
 import UIKit
 
-class SimpleInputViewController: UIViewController {
+class KVOSimpleInputViewController: UIViewController {
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var myButton: UIButton!
 
-    @objc let viewModel = SimpleInputViewModel()
+    @objc let viewModel = KVOSimpleInputViewModel()
 
     var observers: [NSKeyValueObservation?] = []
 
     init() {
-        super.init(nibName: SimpleInputViewController.className, bundle: nil)
+        super.init(nibName: KVOSimpleInputViewController.className, bundle: nil)
 
         title = "Simple Input"
     }
@@ -81,7 +81,7 @@ class SimpleInputViewController: UIViewController {
     }
 }
 
-extension SimpleInputViewController: UITextFieldDelegate {
+extension KVOSimpleInputViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         myButtonTapped(textField)
         return true

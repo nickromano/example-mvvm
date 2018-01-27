@@ -9,8 +9,8 @@
 import XCTest
 @testable import ExampleMVVM
 
-class SimpleInputViewControllerTest: XCTestCase {
-    let viewController = SimpleInputViewController()
+class KVOSimpleInputViewControllerTest: XCTestCase {
+    let viewController = KVOSimpleInputViewController()
 
     override func setUp() {
         super.setUp()

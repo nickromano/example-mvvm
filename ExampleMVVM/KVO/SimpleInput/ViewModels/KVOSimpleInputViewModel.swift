@@ -13,7 +13,7 @@ enum ButtonTappedResult {
     case error(title: String, message: String)
 }
 
-class SimpleInputViewModel: NSObject {
+class KVOSimpleInputViewModel: NSObject {
     // Outputs
     @objc dynamic private(set) var myTextFieldText = ""
     @objc dynamic private(set) var myButtonIsEnabled = false
