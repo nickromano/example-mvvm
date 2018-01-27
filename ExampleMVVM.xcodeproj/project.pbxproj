@@ -12,6 +12,8 @@
 		CD3DC483201D3BC400C5ADB0 /* CSSimpleInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC482201D3BC400C5ADB0 /* CSSimpleInputViewModel.swift */; };
 		CD3DC485201D3CAB00C5ADB0 /* CSSimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC484201D3CAB00C5ADB0 /* CSSimpleInputViewController.swift */; };
 		CD3DC487201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3DC486201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib */; };
+		CD3DC48B201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC48A201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift */; };
+		CD3DC48D201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC48C201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift */; };
 		CD5E1634201C0CAE000A66DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1633201C0CAE000A66DD /* AppDelegate.swift */; };
 		CD5E1636201C0CAE000A66DD /* KVOSimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1635201C0CAE000A66DD /* KVOSimpleInputViewController.swift */; };
 		CD5E163B201C0CAE000A66DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5E163A201C0CAE000A66DD /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		CD3DC482201D3BC400C5ADB0 /* CSSimpleInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewModel.swift; sourceTree = "<group>"; };
 		CD3DC484201D3CAB00C5ADB0 /* CSSimpleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewController.swift; sourceTree = "<group>"; };
 		CD3DC486201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSimpleInputViewController.xib; sourceTree = "<group>"; };
+		CD3DC48A201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewControllerTest.swift; sourceTree = "<group>"; };
+		CD3DC48C201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewModelTest.swift; sourceTree = "<group>"; };
 		CD5E1630201C0CAE000A66DD /* ExampleMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5E1633201C0CAE000A66DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5E1635201C0CAE000A66DD /* KVOSimpleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOSimpleInputViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,24 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		CD3DC488201D3FCC00C5ADB0 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				CD5E1664201C5228000A66DD /* KVOSimpleInputViewModelTest.swift */,
+				CD5E1676201C5A35000A66DD /* KVOSimpleInputViewControllerTest.swift */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		CD3DC489201D3FD100C5ADB0 /* ClosureState */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DC48A201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift */,
+				CD3DC48C201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift */,
+			);
+			path = ClosureState;
+			sourceTree = "<group>";
+		};
 		CD5E1627201C0CAE000A66DD = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +178,9 @@
 		CD5E1647201C0CAE000A66DD /* ExampleMVVMTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD3DC489201D3FD100C5ADB0 /* ClosureState */,
+				CD3DC488201D3FCC00C5ADB0 /* KVO */,
 				CD5E164A201C0CAE000A66DD /* Info.plist */,
-				CD5E1664201C5228000A66DD /* KVOSimpleInputViewModelTest.swift */,
-				CD5E1676201C5A35000A66DD /* KVOSimpleInputViewControllerTest.swift */,
 			);
 			path = ExampleMVVMTests;
 			sourceTree = "<group>";
@@ -345,7 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3DC48B201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift in Sources */,
 				CD5E1677201C5A35000A66DD /* KVOSimpleInputViewControllerTest.swift in Sources */,
+				CD3DC48D201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift in Sources */,
 				CD5E1665201C5228000A66DD /* KVOSimpleInputViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
