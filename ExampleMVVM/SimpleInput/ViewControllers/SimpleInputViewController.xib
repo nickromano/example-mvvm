@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimpleInputViewController" customModule="ExampleMVVM" customModuleProvider="target">
+            <connections>
+                <outlet property="myButton" destination="EuO-at-TuR" id="lVV-2B-FaR"/>
+                <outlet property="myTextField" destination="enM-D0-dNn" id="IFT-YA-Duf"/>
+                <outlet property="view" destination="CDI-Xw-q0D" id="w1e-2j-zlv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CDI-Xw-q0D">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enM-D0-dNn">
+                    <rect key="frame" x="20" y="268.5" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuO-at-TuR">
+                    <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="myButtonTapped:" destination="-1" eventType="touchUpInside" id="Zry-XF-b77"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-yO-Aih">
+                    <rect key="frame" x="20" y="162" width="335" height="86.5"/>
+                    <string key="text">Enter some text into this field. It will be lower cased as you type and the button will only be enabled once the data is valid.
+(longer than 5 characters)</string>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Sf5-yO-Aih" firstAttribute="leading" secondItem="O3p-aR-QDl" secondAttribute="leading" constant="20" id="0l0-y0-ciK"/>
+                <constraint firstItem="EuO-at-TuR" firstAttribute="centerY" secondItem="CDI-Xw-q0D" secondAttribute="centerY" id="1Cy-54-3vD"/>
+                <constraint firstItem="enM-D0-dNn" firstAttribute="leading" secondItem="O3p-aR-QDl" secondAttribute="leading" constant="20" id="9oT-43-huO"/>
+                <constraint firstItem="EuO-at-TuR" firstAttribute="centerX" secondItem="CDI-Xw-q0D" secondAttribute="centerX" id="F3Q-3W-u1D"/>
+                <constraint firstAttribute="trailing" secondItem="Sf5-yO-Aih" secondAttribute="trailing" constant="20" id="VGd-Kb-B1O"/>
+                <constraint firstItem="enM-D0-dNn" firstAttribute="top" secondItem="Sf5-yO-Aih" secondAttribute="bottom" constant="20" id="kwu-cd-658"/>
+                <constraint firstItem="EuO-at-TuR" firstAttribute="top" secondItem="enM-D0-dNn" secondAttribute="bottom" constant="20" id="raA-zf-l1a"/>
+                <constraint firstItem="enM-D0-dNn" firstAttribute="centerX" secondItem="CDI-Xw-q0D" secondAttribute="centerX" id="xVc-WK-Xry"/>
+                <constraint firstItem="O3p-aR-QDl" firstAttribute="trailing" secondItem="enM-D0-dNn" secondAttribute="trailing" constant="20" id="zYL-qL-Sje"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="O3p-aR-QDl"/>
+        </view>
+    </objects>
+</document>
