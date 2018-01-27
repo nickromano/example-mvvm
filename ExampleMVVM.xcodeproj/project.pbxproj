@@ -14,6 +14,10 @@
 		CD3DC487201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3DC486201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib */; };
 		CD3DC48B201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC48A201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift */; };
 		CD3DC48D201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC48C201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift */; };
+		CD3DC493201D460B00C5ADB0 /* BCSimpleInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC492201D460B00C5ADB0 /* BCSimpleInputViewModel.swift */; };
+		CD3DC495201D461700C5ADB0 /* BCSimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC494201D461700C5ADB0 /* BCSimpleInputViewController.swift */; };
+		CD3DC497201D462B00C5ADB0 /* BCSimpleInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3DC496201D462B00C5ADB0 /* BCSimpleInputViewController.xib */; };
+		CD3DC499201D465700C5ADB0 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DC498201D465700C5ADB0 /* Bindable.swift */; };
 		CD5E1634201C0CAE000A66DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1633201C0CAE000A66DD /* AppDelegate.swift */; };
 		CD5E1636201C0CAE000A66DD /* KVOSimpleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E1635201C0CAE000A66DD /* KVOSimpleInputViewController.swift */; };
 		CD5E163B201C0CAE000A66DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5E163A201C0CAE000A66DD /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		CD3DC486201D3CCA00C5ADB0 /* CSSimpleInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSimpleInputViewController.xib; sourceTree = "<group>"; };
 		CD3DC48A201D3FFE00C5ADB0 /* CSSimpleInputViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewControllerTest.swift; sourceTree = "<group>"; };
 		CD3DC48C201D407D00C5ADB0 /* CSSimpleInputViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSimpleInputViewModelTest.swift; sourceTree = "<group>"; };
+		CD3DC492201D460B00C5ADB0 /* BCSimpleInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCSimpleInputViewModel.swift; sourceTree = "<group>"; };
+		CD3DC494201D461700C5ADB0 /* BCSimpleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCSimpleInputViewController.swift; sourceTree = "<group>"; };
+		CD3DC496201D462B00C5ADB0 /* BCSimpleInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCSimpleInputViewController.xib; sourceTree = "<group>"; };
+		CD3DC498201D465700C5ADB0 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		CD5E1630201C0CAE000A66DD /* ExampleMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5E1633201C0CAE000A66DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5E1635201C0CAE000A66DD /* KVOSimpleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOSimpleInputViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,41 @@
 			path = ClosureState;
 			sourceTree = "<group>";
 		};
+		CD3DC48E201D45E800C5ADB0 /* BindableClosure */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DC48F201D45EF00C5ADB0 /* SimpleInput */,
+			);
+			path = BindableClosure;
+			sourceTree = "<group>";
+		};
+		CD3DC48F201D45EF00C5ADB0 /* SimpleInput */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DC491201D45FC00C5ADB0 /* ViewModels */,
+				CD3DC490201D45F600C5ADB0 /* ViewControllers */,
+				CD3DC498201D465700C5ADB0 /* Bindable.swift */,
+			);
+			path = SimpleInput;
+			sourceTree = "<group>";
+		};
+		CD3DC490201D45F600C5ADB0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DC494201D461700C5ADB0 /* BCSimpleInputViewController.swift */,
+				CD3DC496201D462B00C5ADB0 /* BCSimpleInputViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CD3DC491201D45FC00C5ADB0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DC492201D460B00C5ADB0 /* BCSimpleInputViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		CD5E1627201C0CAE000A66DD = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +206,13 @@
 		CD5E1632201C0CAE000A66DD /* ExampleMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				CD3DC47E201D3AEB00C5ADB0 /* ClosureState */,
-				CD3DC47B201D3AD400C5ADB0 /* KVO */,
 				CD5E1633201C0CAE000A66DD /* AppDelegate.swift */,
 				CD5E163A201C0CAE000A66DD /* Assets.xcassets */,
+				CD3DC48E201D45E800C5ADB0 /* BindableClosure */,
+				CD3DC47E201D3AEB00C5ADB0 /* ClosureState */,
 				CD5E1660201C5136000A66DD /* Extensions */,
 				CD5E163F201C0CAE000A66DD /* Info.plist */,
+				CD3DC47B201D3AD400C5ADB0 /* KVO */,
 				CD5E163C201C0CAE000A66DD /* LaunchScreen.storyboard */,
 				CD5E1663201C5158000A66DD /* StartView */,
 			);
@@ -318,6 +362,7 @@
 				CD5E165E201C4D1D000A66DD /* StartViewController.xib in Resources */,
 				CD5E163B201C0CAE000A66DD /* Assets.xcassets in Resources */,
 				CD3DC47A201D284700C5ADB0 /* readme.md in Resources */,
+				CD3DC497201D462B00C5ADB0 /* BCSimpleInputViewController.xib in Resources */,
 				CD5E1658201C1880000A66DD /* KVOSimpleInputViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,8 +398,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3DC499201D465700C5ADB0 /* Bindable.swift in Sources */,
 				CD5E1636201C0CAE000A66DD /* KVOSimpleInputViewController.swift in Sources */,
 				CD5E165C201C4D03000A66DD /* StartViewController.swift in Sources */,
+				CD3DC495201D461700C5ADB0 /* BCSimpleInputViewController.swift in Sources */,
+				CD3DC493201D460B00C5ADB0 /* BCSimpleInputViewModel.swift in Sources */,
 				CD5E1662201C5143000A66DD /* NSObject+ClassName.swift in Sources */,
 				CD5E1656201C0D24000A66DD /* KVOSimpleInputViewModel.swift in Sources */,
 				CD5E1634201C0CAE000A66DD /* AppDelegate.swift in Sources */,

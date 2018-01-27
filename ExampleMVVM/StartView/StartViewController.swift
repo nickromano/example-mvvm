@@ -12,10 +12,11 @@ import UIKit
 enum TableViewRow {
     case simpleInputKVO
     case simpleInputClosure
+    case simpleInputBindableClosure
 
     var title: String {
         switch self {
-        case .simpleInputKVO, .simpleInputClosure:
+        case .simpleInputKVO, .simpleInputClosure, .simpleInputBindableClosure:
             return "Simple Input"
         }
     }
@@ -26,6 +27,8 @@ enum TableViewRow {
             return KVOSimpleInputViewController()
         case .simpleInputClosure:
             return CSSimpleInputViewController()
+        case .simpleInputBindableClosure:
+            return BCSimpleInputViewController()
         }
     }
 }
@@ -33,6 +36,7 @@ enum TableViewRow {
 enum TableViewSection {
     case kvo
     case closureState
+    case bindableClosure
 
     var rows: [TableViewRow] {
         switch self {
@@ -40,6 +44,8 @@ enum TableViewSection {
             return [.simpleInputKVO]
         case .closureState:
             return [.simpleInputClosure]
+        case .bindableClosure:
+            return [.simpleInputBindableClosure]
         }
     }
 
@@ -49,12 +55,14 @@ enum TableViewSection {
             return "KVO"
         case .closureState:
             return "Closure State"
+        case .bindableClosure:
+            return "Bindable Closure"
         }
     }
 }
 
 class StartViewController: UITableViewController {
-    let sections: [TableViewSection] = [.kvo, .closureState]
+    let sections: [TableViewSection] = [.kvo, .closureState, .bindableClosure]
 
     override func viewDidLoad() {
         super.viewDidLoad()
