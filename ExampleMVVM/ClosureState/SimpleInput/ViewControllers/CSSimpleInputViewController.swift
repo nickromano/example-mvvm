@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class CSSimpleInputViewController: UIViewController {
-    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var myTextField: UITextField! {
+        didSet {
+            myTextField.delegate = self
+            myTextField.addTarget(self, action: #selector(myTextFieldChanged), for: UIControlEvents.editingChanged)
+        }
+    }
     @IBOutlet weak var myButton: UIButton!
 
     var viewModel: CSSimpleInputViewModel!
@@ -33,10 +38,6 @@ class CSSimpleInputViewController: UIViewController {
             self.myButton.isEnabled = state.myButtonIsEnabled
         }
 
-        // Pass all user entered text to viewModel.inputMyTextFieldText
-        myTextField.addTarget(self, action: #selector(myTextFieldChanged), for: UIControlEvents.editingChanged)
-
-        myTextField.delegate = self
         myTextField.becomeFirstResponder()
     }
 
