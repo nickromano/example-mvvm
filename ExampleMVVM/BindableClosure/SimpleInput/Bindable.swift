@@ -11,11 +11,13 @@ import Foundation
 class Bindable<T> {
     typealias Listener = ((T) -> Void)
 
-    var listener: Listener?
+    var listeners: [Listener?] = []
 
     var value: T {
         didSet {
-            listener?(value)
+            listeners.forEach { listener in
+                listener?(value)
+            }
         }
     }
 
@@ -24,14 +26,11 @@ class Bindable<T> {
     }
 
     func bind(_ listener: Listener?) {
-        if listener != nil {
-            fatalError("Only supports one listener at a time.")
-        }
-        self.listener = listener
+        listeners.append(listener)
     }
 
     func bindAndFire(_ listener: Listener?) {
-        self.listener = listener
+        listeners.append(listener)
         listener?(value)
     }
 }

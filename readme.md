@@ -44,7 +44,6 @@ Pros
 
 Cons
 * Need to use `property.value = ` vs the standard `property = `
-* Only supports one listener per output
 
 ### ReactiveSwift
 
