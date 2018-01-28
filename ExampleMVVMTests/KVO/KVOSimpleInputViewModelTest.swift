@@ -9,9 +9,19 @@
 import XCTest
 @testable import ExampleMVVM
 
+class MockKVOSimpleInputViewModelDelegate: KVOSimpleInputViewModelDelegate {
+    var errorShown = false
+
+    func showAlertViewController(title: String, message: String) {
+        errorShown = true
+    }
+}
+
 class KVOSimpleInputViewModelTest: XCTestCase {
     func testTextFieldIsValidated() {
-        let viewModel = KVOSimpleInputViewModel()
+        let delgate = MockKVOSimpleInputViewModelDelegate()
+
+        let viewModel = KVOSimpleInputViewModel(delegate: delgate)
 
         XCTAssertEqual(viewModel.myTextFieldText, "")
         XCTAssertEqual(viewModel.myButtonIsEnabled, false)

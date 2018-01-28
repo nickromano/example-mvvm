@@ -13,6 +13,10 @@ struct CSSimpleInputViewModelState {
     var myButtonIsEnabled: Bool
 }
 
+protocol CSSimpleInputViewModelDelegate: class {
+    func showAlertViewController(title: String, message: String)
+}
+
 class CSSimpleInputViewModel {
     private(set) var state = CSSimpleInputViewModelState(myTextFieldText: "", myButtonIsEnabled: false) {
         didSet {
@@ -30,7 +34,10 @@ class CSSimpleInputViewModel {
         }
     }
 
-    init(callback: @escaping (CSSimpleInputViewModelState) -> Void) {
+    weak var delegate: CSSimpleInputViewModelDelegate?
+
+    init(delegate: CSSimpleInputViewModelDelegate, callback: @escaping (CSSimpleInputViewModelState) -> Void) {
+        self.delegate = delegate
         self.callback = callback
         self.callback(state)
     }
@@ -39,12 +46,11 @@ class CSSimpleInputViewModel {
         inputTextFieldText = text ?? ""
     }
 
-    func myButtonTapped(completion: (ButtonTappedResult) -> Void) {
+    func myButtonTapped() {
         if !state.myButtonIsEnabled {
-            completion(.error(title: "Input Error", message: "Input must be more than 5 characters."))
+            delegate?.showAlertViewController(title: "Input Error", message: "Input must be more than 5 characters.")
             return
         }
         print(state.myTextFieldText)
-        completion(.saved)
     }
 }

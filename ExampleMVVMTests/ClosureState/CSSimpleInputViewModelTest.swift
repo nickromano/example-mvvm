@@ -9,11 +9,21 @@
 import XCTest
 @testable import ExampleMVVM
 
+class MockCSSimpleInputViewModelDelegate: CSSimpleInputViewModelDelegate {
+    var errorShown = false
+
+    func showAlertViewController(title: String, message: String) {
+        errorShown = true
+    }
+}
+
 class CSSimpleInputViewModelTest: XCTestCase {
     func testTextFieldIsValidated() {
         var states: [CSSimpleInputViewModelState] = []
 
-        let viewModel = CSSimpleInputViewModel { state in
+        let delegate = MockCSSimpleInputViewModelDelegate()
+
+        let viewModel = CSSimpleInputViewModel(delegate: delegate) { state in
             states.append(state)
         }
 

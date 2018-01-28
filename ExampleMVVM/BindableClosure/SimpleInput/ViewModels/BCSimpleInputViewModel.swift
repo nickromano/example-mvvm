@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol BCSimpleInputViewModelDelegate: class {
+    func showAlertViewController(title: String, message: String)
+}
+
 class BCSimpleInputViewModel {
     // Outputs
     private(set) var myTextFieldText = Bindable("")
@@ -22,16 +26,21 @@ class BCSimpleInputViewModel {
         }
     }
 
+    weak var delegate: BCSimpleInputViewModelDelegate?
+
+    init(delegate: BCSimpleInputViewModelDelegate) {
+        self.delegate = delegate
+    }
+
     func myTextFieldChanged(text: String?) {
         inputMyTextFieldText = text ?? ""
     }
 
-    func myButtonTapped(completion: (ButtonTappedResult) -> Void) {
+    func myButtonTapped() {
         if !myButtonIsEnabled.value {
-            completion(.error(title: "Input Error", message: "Input must be more than 5 characters."))
+            delegate?.showAlertViewController(title: "Input Error", message: "Input must be more than 5 characters.")
             return
         }
         print(myTextFieldText.value)
-        completion(.saved)
     }
 }

@@ -33,7 +33,7 @@ class CSSimpleInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = CSSimpleInputViewModel { [unowned self] state in
+        viewModel = CSSimpleInputViewModel(delegate: self) { [unowned self] state in
             self.myTextField.text = state.myTextFieldText
             self.myButton.isEnabled = state.myButtonIsEnabled
         }
@@ -46,16 +46,7 @@ class CSSimpleInputViewController: UIViewController {
     }
 
     @IBAction func myButtonTapped(_ sender: Any) {
-        viewModel.myButtonTapped { result in
-            switch result {
-            case .saved:
-                break
-            case .error(let title, let message):
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alertController, animated: true, completion: nil)
-            }
-        }
+        viewModel.myButtonTapped()
     }
 }
 
@@ -63,5 +54,13 @@ extension CSSimpleInputViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         myButtonTapped(textField)
         return true
+    }
+}
+
+extension CSSimpleInputViewController: CSSimpleInputViewModelDelegate {
+    func showAlertViewController(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }

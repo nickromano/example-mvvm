@@ -8,9 +8,8 @@
 
 import Foundation
 
-enum ButtonTappedResult {
-    case saved
-    case error(title: String, message: String)
+protocol KVOSimpleInputViewModelDelegate: class {
+    func showAlertViewController(title: String, message: String)
 }
 
 class KVOSimpleInputViewModel: NSObject {
@@ -27,12 +26,17 @@ class KVOSimpleInputViewModel: NSObject {
         }
     }
 
-    func myButtonTapped(completion: (ButtonTappedResult) -> Void) {
+    weak var delegate: KVOSimpleInputViewModelDelegate?
+
+    init(delegate: KVOSimpleInputViewModelDelegate) {
+        self.delegate = delegate
+    }
+
+    func myButtonTapped() {
         if !myButtonIsEnabled {
-            completion(.error(title: "Input Error", message: "Input must be more than 5 characters."))
+            delegate?.showAlertViewController(title: "Input Error", message: "Input must be more than 5 characters.")
             return
         }
         print(myTextFieldText)
-        completion(.saved)
     }
 }

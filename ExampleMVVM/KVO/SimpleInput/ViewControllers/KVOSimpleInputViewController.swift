@@ -17,12 +17,14 @@ class KVOSimpleInputViewController: UIViewController {
     }
     @IBOutlet weak var myButton: UIButton!
 
-    @objc let viewModel = KVOSimpleInputViewModel()
+    @objc var viewModel: KVOSimpleInputViewModel!
 
     var observers: [NSKeyValueObservation?] = []
 
     init() {
         super.init(nibName: KVOSimpleInputViewController.className, bundle: nil)
+
+        viewModel = KVOSimpleInputViewModel(delegate: self)
 
         title = "Simple Input"
     }
@@ -69,16 +71,7 @@ class KVOSimpleInputViewController: UIViewController {
     }
 
     @IBAction func myButtonTapped(_ sender: Any) {
-        viewModel.myButtonTapped { result in
-            switch result {
-            case .saved:
-                break
-            case .error(let title, let message):
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alertController, animated: true, completion: nil)
-            }
-        }
+        viewModel.myButtonTapped()
     }
 }
 
@@ -86,5 +79,13 @@ extension KVOSimpleInputViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         myButtonTapped(textField)
         return true
+    }
+}
+
+extension KVOSimpleInputViewController: KVOSimpleInputViewModelDelegate {
+    func showAlertViewController(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
