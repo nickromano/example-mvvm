@@ -44,6 +44,7 @@ Pros
 
 Cons
 * Need to use `property.value = ` vs the standard `property = `
+* Can't use access control to prevent `property.value` from being set.
 
 ### ReactiveSwift
 
